@@ -16,17 +16,17 @@ export default function App() {
           <Text style={tema ? styles.nombre1 : styles.nombre2}>Leo Messi</Text>
           <Text style={tema ? styles.titulo1 : styles.titulo2}>(MicrosYA Admin)</Text>
 
-          <TextInput onChangeText={setMensaje} placeholder="Enviar mensaje"/>
-          <TouchableOpacity style={styles.btn} onPress={() => Alert.alert(mensaje)}>
-            <Text style={{color: "#fff"}}>Contactar</Text>
+          <TextInput style={styles.input} onChangeText={setMensaje} placeholder="Enviar mensaje"/>
+          <TouchableOpacity style={styles.btn} onPress={() => mensaje != "" ? Alert.alert(mensaje) : false}>
+            <Text style={{color: "#000"}}>Contactar</Text>
           </TouchableOpacity>
 
           <Pressable
           style={[styles.btn, hover ? styles.btn3 : styles.btn2]}
-          onPress={() => setTema(!tema)}
-          OnPressIn={() => setHover(true)}
+          onPress={() => {setTema(!tema); setHover(true)}}
           onPressOut={() => setHover(false)}>
-            <Text style={{color: "#fff"}}>Ver perfil</Text>
+
+            <Text style={{color: "#000"}}>Ver perfil</Text>
           </Pressable>
         </View>
 
@@ -44,22 +44,27 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
+    gap: 10
   },
   btn: {
     borderWidth: 1,
     borderColor: "black",
     padding: 10,
     borderRadius: 15,
-    backgroundColor: "#00f"
+    backgroundColor: "#FFA28C"
   },
   btn2: {
-    marginTop: 5,
-    backgroundColor: "#0f0"
+    backgroundColor: "#FFA28C"
   },
   btn3: {
-    marginTop: 5,
-    backgroundColor: "#11cf11"
+    backgroundColor: "#a35c4b"
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 15,
+    width: "70%"
   },
   nombre1: {fontFamily: "sans-serif", fontStyle: "bold", fontSize: 20},
   nombre2: {fontFamily: "comic sans ms", fontSize: 15},
