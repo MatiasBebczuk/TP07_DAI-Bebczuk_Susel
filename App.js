@@ -37,15 +37,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.5,
+    height: "60dvh",
     alignItems: 'center',
-    justifyContent: 'center',
     borderWidth: 1,
     borderColor: "black",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
     backgroundColor: "#fff",
-    gap: 10
+    gap: 10,
+    paddingVertical: 10
   },
   btn: {
     borderWidth: 1,
